@@ -16,7 +16,7 @@ int main(void)
 	a = sizeof(char);
 	b = sizeof(int);
 	c = sizeof(long);
-	d = sizeof(unsigned long);
+	d = sizeof(double);
 	e = sizeof(float);
 	printf("Size of a char: %d byte(s)\n", a);
 	printf("Size of an int: %d byte(s)\n", b);
