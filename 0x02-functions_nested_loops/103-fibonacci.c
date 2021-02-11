@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	long int sum = 0, fibo, fibo1 = 1, fibo2 = 2;
+	long int sum = 2, fibo, fibo1 = 1, fibo2 = 2;
 
 	for (i = 1; i <= 48; i++)
 	{
