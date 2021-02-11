@@ -9,6 +9,7 @@
 int main(void)
 {
 	int i;
+
 	long double fibo, fibo1 = 1, fibo2 = 2;
 
 	printf("%d, %d, ", 1, 2);
