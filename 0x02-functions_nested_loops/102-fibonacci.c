@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i; 
+	int i;
 	long int fibo, fibo1 = 1, fibo2 = 2;
 
 	printf("%d, %d, ", 1, 2);
@@ -17,7 +17,14 @@ int main(void)
 		fibo = fibo1 + fibo2;
 		fibo1 = fibo2;
 		fibo2 = fibo;
-		printf("%ld, ", fibo);
+		if (i < 48)
+		{
+			printf("%ld, ", fibo);
+		}
+		else
+		{
+			printf("%ld", fibo);
+		}
 	}
 	printf("\n");
 	return (0);
