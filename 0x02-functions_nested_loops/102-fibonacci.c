@@ -8,15 +8,16 @@
 
 int main(void)
 {
-	int i, fibo, fibo1 = 1, fibo2 = 2;
+	int i; 
+	long int fibo, fibo1 = 1, fibo2 = 2;
 
 	printf("%d, %d, ", 1, 2);
-	for (i = 0; i < 50; i++)
+	for (i = 1; i <= 48; i++)
 	{
 		fibo = fibo1 + fibo2;
 		fibo1 = fibo2;
 		fibo2 = fibo;
-		printf("%d, ", fibo);
+		printf("%ld, ", fibo);
 	}
 	printf("\n");
 	return (0);
