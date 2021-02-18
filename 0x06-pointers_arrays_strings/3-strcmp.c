@@ -18,12 +18,12 @@ int _strcmp(char *s1, char *s2)
 	for (i = 0; i < n1; i++)
 	{
 		if (s1[i] != s2[i])
-		{	
+		{
 			r = s1[i] - s2[i];
 			break;
-		}		
+		}
 		else
 			r = 0;
-	}	
+	}
 	return (r);
 }
