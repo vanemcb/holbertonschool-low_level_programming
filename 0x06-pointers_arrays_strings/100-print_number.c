@@ -25,7 +25,5 @@ void print_number(int n)
 		if (b == 1)
 			_putchar(num + '0');
 		x = x / 10;
-		if (n == 0)
-			_putchar('0');
 	}
 }
