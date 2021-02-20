@@ -7,7 +7,7 @@
 char *cap_string(char *s)
 {
 	char letter[] = "abcdefghijklmnopqrstuvwxyz";
-	char sep[] = ",;.!?\"(){}\n\t }";
+	char sep[] = " ,;.!?\"(){}\n\t";
 
 	int i = 0, x, y;
 
@@ -21,6 +21,8 @@ char *cap_string(char *s)
 				{
 					if (s[i + 1] == letter[y])
 						s[i + 1] = s[i + 1] - 32;
+					if (s[0] == letter[y])
+						s[0] = s[0] - 32;
 				}
 			}
 		}
