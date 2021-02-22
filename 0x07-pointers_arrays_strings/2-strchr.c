@@ -8,7 +8,7 @@
 char *_strchr(char *s, char c)
 {
 	int i = 0;
-	char *s2;
+	char *s2 = '\0';
 
 	while (s[i] != '\0')
 	{
@@ -19,7 +19,5 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
-	if (s[i] == '\0')
-		s2 = '\0';
 	return (s2);
 }
