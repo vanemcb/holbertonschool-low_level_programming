@@ -1,11 +1,9 @@
+#include "holberton.h"
 /**
  * _sqrt_recursion - function that returns the natural square root of a number
  * @n: input number
- * @c: counter
  * Return: sqrt
  */
-
-int sqrt_value(int c, int n);
 
 int _sqrt_recursion(int n)
 {
