@@ -12,8 +12,8 @@ char *str_concat(char *s1, char *s2)
 {
 	char *final_str;
 	int len1 = 0, len2 = 0, x;
-	
-	if (s1 == 0 && s2 == 0)
+
+	if (s1 == '\0' && s2 == '\0')
 		return (NULL);
 
 	while (s1[len1] != '\0')
@@ -31,7 +31,7 @@ char *str_concat(char *s1, char *s2)
 		final_str[x] = s1[x];
 
 	for (x = 0; x <= len2; x++)
-		final_str[len1+ x] = s2[x];
+		final_str[len1 + x] = s2[x];
 
 	return (final_str);
 }
