@@ -9,14 +9,24 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, x, sum;
 
 	if (argc == 1)
 		printf("%d\n", 0);
 	else
 	{
 		for (i = 1; i < argc; i++)
+		{
+			for (x = 0; argv[i][x] != '\0'; x++)
+			{
+				if (argv[i][x] < '0' || argv[i][x] > '9')
+				{
+					printf("Error\n");
+					return (0);
+				}
+			}
 			sum = sum + atoi(argv[i]);
+		}
 		printf("%d\n", sum);
 	}
 	return (0);
