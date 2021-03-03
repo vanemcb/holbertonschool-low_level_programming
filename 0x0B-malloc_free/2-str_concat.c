@@ -14,16 +14,15 @@ char *str_concat(char *s1, char *s2)
 	int len1 = 0, len2 = 0, x;
 
 	if (s1 == NULL)
-		len1 = 0;
-	else
-		while (s1[len1] != '\0')
-			len1++;
+		s1 = "";
+	if (s2== NULL )
+		s2 = "";
 
-	if (s2 == NULL)
-		len2 = 0;
-	else
-		while (s2[len2] != '\0')
-			len2++;
+	while (s1[len1] != '\0')
+		len1++;
+
+	while (s2[len2] != '\0')
+		len2++;
 
 	final_str = malloc(sizeof(char) * (len1 + len2 + 1));
 
