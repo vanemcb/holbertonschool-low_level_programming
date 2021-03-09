@@ -13,7 +13,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *other_dog;
 
-	other_dog = malloc(sizeof(dog_t));
+	int len1, len2;
+
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
+
+	other_dog = malloc(len1 + len2 + sizeof(float));
 
 	if (other_dog == NULL)
 		return (NULL);
@@ -23,4 +28,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	other_dog->owner = owner;
 
 	return (other_dog);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: string length
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (*(s + i) != '\0')
+		i++;
+	return (i);
 }
