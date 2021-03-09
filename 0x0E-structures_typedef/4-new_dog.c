@@ -12,35 +12,48 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *other_dog;
+	char *name2, *owner2;
 
-	int len1, len2;
-
-	len1 = _strlen(name);
-	len2 = _strlen(owner);
-
-	other_dog = malloc(len1 + len2 + sizeof(float));
-
+	other_dog = malloc(sizeof(dog_t));
 	if (other_dog == NULL)
 		return (NULL);
 
-	other_dog->name = name;
+	name2 = _strdup(name);
+	owner2 = _strdup(owner);
+
+	other_dog->name = name2;
 	other_dog->age = age;
-	other_dog->owner = owner;
+	other_dog->owner = owner2;
 
 	return (other_dog);
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: string length
+ * _strdup - function that returns a pointer to a newly
+ * allocated space in memory, which contains a copy of the
+ * string given as a parameter
+ * @str: input string
+ * Return: pointer to a newly allocated space in memory
  */
 
-int _strlen(char *s)
+char *_strdup(char *str)
 {
-	int i = 0;
+	char *str2;
+	int i = 0, x;
 
-	while (*(s + i) != '\0')
+	if (str == NULL)
+		return (NULL);
+
+	while (str[i] != '\0')
 		i++;
-	return (i);
+
+	str2 = malloc(sizeof(char) * (i + 1));
+
+	if (str2 == NULL)
+		return (NULL);
+
+	for (x = 0; x <= i; x++)
+		str2[x] = str[x];
+
+	return (str2);
 }
