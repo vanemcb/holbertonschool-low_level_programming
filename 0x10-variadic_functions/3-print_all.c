@@ -79,6 +79,9 @@ void p_string(va_list input_text)
 	char *str = va_arg(input_text, char *);
 
 	if (str == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
 	printf("%s", str);
 }
