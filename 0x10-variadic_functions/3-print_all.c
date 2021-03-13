@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 
 	va_start(input_args, format);
 
-	while (format[i1] != '\0')
+	while (format != NULL && format[i1] != '\0')
 	{
 		while (print_selec[i2].id_string != NULL)
 		{
