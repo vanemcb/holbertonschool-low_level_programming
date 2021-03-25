@@ -14,9 +14,14 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	for (x = 0; x <= index; x++)
 	{
-		n2 = n;
-		n = n >> 1;
-		bin = n2 - (n * 2);
+		if (n != 0)
+		{
+			n2 = n;
+			n = n >> 1;
+			bin = n2 - (n * 2);
+		}
+		else
+			return (-1);
 	}
 	return (bin);
 }
