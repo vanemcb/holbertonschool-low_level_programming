@@ -11,7 +11,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int n2;
 	unsigned int x = 0;
-	int bit, bin[257];
+	int bit, bin[256];
 
 	if (n == 0)
 	{
