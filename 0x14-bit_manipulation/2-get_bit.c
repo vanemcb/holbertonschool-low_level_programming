@@ -12,6 +12,11 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int n2;
 	unsigned int bin, x;
 
+	if (n == 0 && index != 0)
+		return (-1);
+	else if (n == 0 && index == 0)
+		return (0);
+
 	for (x = 0; x <= index; x++)
 	{
 		if (n != 0)
