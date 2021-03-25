@@ -32,7 +32,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		x++;
 	}
 
-	if (index > (x - 1))
+	if (index > (x - 1) || n3 == 18446744073709551615)
 	{
 		*n = n3;
 		return (-1);
