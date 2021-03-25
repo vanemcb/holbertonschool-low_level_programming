@@ -9,10 +9,11 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int n2, decimal = 0;
+	unsigned long int n2, decimal = 0, n3;
 	unsigned int x = 0, x2, i;
 	int bit, bin[256];
 
+	n3 = *n;
 	if (*n == 0)
 	{
 		for (i = 0; i <= index; i++)
@@ -32,7 +33,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 	}
 
 	if (index > (x - 1))
+	{
+		*n = n3;
 		return (-1);
+	}
 
 	bin[index] = 1;
 
