@@ -10,13 +10,16 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int n2;
-	unsigned int x = 0;
+	unsigned int x = 0, i;
 	int bit, bin[256];
 
 	if (n == 0)
 	{
-		bin[0] = 0;
-		x++;
+		for (i = 0; i <= index; i++)
+		{
+			bin[i] = 0;
+			x++;
+		}
 	}
 
 	while (n)
