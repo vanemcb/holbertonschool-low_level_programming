@@ -9,34 +9,14 @@
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int n2, decimal = 0, n3;
-	unsigned int x = 0, x2;
-	int bit, bin[256];
+	unsigned long int one;
 
-	n3 = *n;
-
-	if (*n == 0)
-		x++;
-
-	while (*n)
-	{
-		n2 = *n;
-		*n = *n >> 1;
-		bit = n2 - (*n * 2);
-		bin[x] = bit;
-		x++;
-	}
-
-	if (index > (x - 1))
-	{
-		*n = n3;
+	if (index > 63)
 		return (-1);
-	}
 
-	bin[index] = 0;
+	one = 1 << index;
+	if (*n & one)
+		*n = *n ^ one;
 
-	for (x2 = 0; x2 < x; x2++)
-		decimal += bin[x2] << x2;
-	*n = decimal;
 	return (1);
 }
