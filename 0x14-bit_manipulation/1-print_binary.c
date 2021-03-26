@@ -7,19 +7,11 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int n2;
 	int bin;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	if (n >= 2)
+		print_binary(n >> 1);
 
-	n2 = n;
-	n = n >> 1;
-	bin = n2 - (n * 2);
-	if (n != 0)
-		print_binary(n);
+	bin = n & 1;
 	_putchar(bin + '0');
 }
