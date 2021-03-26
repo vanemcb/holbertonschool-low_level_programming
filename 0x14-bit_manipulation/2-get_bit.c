@@ -9,30 +9,12 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int n2;
-	unsigned int x = 0, i;
-	int bit, bin[256];
+	unsigned int x;
+	int bit;
 
-	if (n == 0)
-	{
-		for (i = 0; i <= index; i++)
-		{
-			bin[i] = 0;
-			x++;
-		}
-	}
-
-	while (n)
-	{
-		n2 = n;
+	for (x = 0; x < index; x++)
 		n = n >> 1;
-		bit = n2 - (n * 2);
-		bin[x] = bit;
-		x++;
-	}
 
-	if (index > (x - 1))
-		return (-1);
-
-	return (bin[index]);
+	bit = n & 1;
+	return (bit);
 }
