@@ -11,7 +11,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int x, bit;
 
-	if (index > 64)
+	if (index > 63)
 		return (-1);
 
 	for (x = 0; x < index; x++)
