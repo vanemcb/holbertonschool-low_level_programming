@@ -8,7 +8,7 @@
  * Return: number of letters or 0 if it fail
  */
 
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer = malloc(letters);
 	int fd, bytes_read, bytes_write;
