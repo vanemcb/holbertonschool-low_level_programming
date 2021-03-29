@@ -8,7 +8,7 @@
  * Return: number of letters or 0 if it fail
  */
 
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer = malloc(letters);
 	int fd, bytes_read, bytes_write;
@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buffer)
 		return (0);
 
-	if (!*filename)
+	if (!filename)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
