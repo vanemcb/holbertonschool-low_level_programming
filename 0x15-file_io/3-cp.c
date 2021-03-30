@@ -21,32 +21,41 @@ int main(int argc, char *argv[])
 
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+		e98(file_from);
 
 	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fd_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
-		exit(99);
-	}
+		e99(file_to);
 
 	rd_from = read(fd_from, buf, 1024);
 	if (rd_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+		e98(file_from);
 
 	wr_to = write(fd_to, buf, rd_from);
 	if (wr_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
-		exit(99);
-	}
+		e99(file_to);
+
 	close(fd_from);
 	close(fd_to);
 	return (0);
+}
+
+/**
+ * e98 - Function that prints error 98
+ * @file: file error
+ */
+void e98(char *file)
+{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+	exit(98);
+}
+
+/**
+ * e99 - Function that prints error 99
+ * @file: file error
+ */
+void e99(char *file)
+{
+	dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file);
+	exit(99);
 }
