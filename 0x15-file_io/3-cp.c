@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	char *file_from = argv[1], *file_to = argv[2], *buf[1024];
+	char *file_from = argv[1], *file_to = argv[2], buf[1024];
 	int fd_from, fd_to, rd_from, wr_to;
 
 	if (argc != 3)
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		e98(file_from);
 
-	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
 		e99(file_to);
 
@@ -34,6 +34,12 @@ int main(int argc, char *argv[])
 	wr_to = write(fd_to, buf, rd_from);
 	if (wr_to == -1)
 		e99(file_to);
+
+	if (close(fd_from) == -1)
+		e100(fd_from);
+
+	if (close(fd_to) == -1)
+		e100(fd_to);
 
 	close(fd_from);
 	close(fd_to);
@@ -58,4 +64,14 @@ void e99(char *file)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file);
 	exit(99);
+}
+
+/**
+ * e100 - Function that prints error 100
+ * @file: file error
+ */
+void e100(int fd)
+{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	exit(100);
 }
