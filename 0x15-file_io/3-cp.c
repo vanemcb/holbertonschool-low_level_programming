@@ -36,13 +36,11 @@ int main(int argc, char *argv[])
 		e99(file_to);
 
 	if (close(fd_from) == -1)
-		e100(fd_from);
+		e100(file_from);
 
 	if (close(fd_to) == -1)
-		e100(fd_to);
+		e100(file_to);
 
-	close(fd_from);
-	close(fd_to);
 	return (0);
 }
 
@@ -70,8 +68,8 @@ void e99(char *file)
  * e100 - Function that prints error 100
  * @fd: file descriptor
  */
-void e100(int fd)
+void e100(char *fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd);
 	exit(100);
 }
