@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		e98(file_from);
 
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
 		e99(file_to);
 
@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 		e99(file_to);
 
 	if (close(fd_from) == -1)
-		e100(file_from);
+		e100(fd_from);
 
 	if (close(fd_to) == -1)
-		e100(file_to);
+		e100(fd_to);
 
 	return (0);
 }
@@ -68,8 +68,8 @@ void e99(char *file)
  * e100 - Function that prints error 100
  * @fd: file descriptor
  */
-void e100(char *fd)
+void e100(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
