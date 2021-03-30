@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", file_from, file_to);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -68,7 +68,7 @@ void e99(char *file)
 
 /**
  * e100 - Function that prints error 100
- * @file: file error
+ * @fd: file descriptor
  */
 void e100(int fd)
 {
