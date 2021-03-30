@@ -46,5 +46,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
 		exit(99);
 	}
+	close(fd_from);
+	close(fd_to);
 	return (0);
 }
