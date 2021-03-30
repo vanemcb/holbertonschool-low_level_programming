@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	char *file_from = argv[1], *file_to = argv[2], buf[1024];
+	char *file_from, *file_to, buf[1024];
 	int fd_from, fd_to, rd_from, wr_to;
 
 	if (argc != 3)
@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	fd_from = open(file_from, O_RDONLY);
+	file_from = argv[1];
+	file_to = argv[2];
+
+		fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 		e98(file_from);
 
