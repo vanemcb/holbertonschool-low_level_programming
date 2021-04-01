@@ -66,7 +66,7 @@ void e98(char *file)
  */
 void e99(char *file)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file);
+	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", file);
 	exit(99);
 }
 
