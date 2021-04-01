@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		e98(file_from);
 
-	fd_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_from == -1)
 		e99(file_to);
 
