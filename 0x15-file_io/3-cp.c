@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
  */
 void e98(char *file)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 	exit(98);
 }
 
@@ -76,6 +76,6 @@ void e99(char *file)
  */
 void e100(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close %d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
