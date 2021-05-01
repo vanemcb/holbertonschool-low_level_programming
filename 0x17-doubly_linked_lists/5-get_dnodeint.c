@@ -9,22 +9,36 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int i;
-	dlistint_t *head_aux = head;
+	unsigned int i, len;
 
 	if (!head)
 		return (NULL);
 
-	while (head_aux)
-	{
-		head_aux = head_aux->next;
-		i++;
-	}
+	len = dlistint_len(head);
 
-	if (index > i)
+	if (index > len || index < 0)
 		return (NULL);
 
 	for (i = 0; i < index; i++)
 		head = head->next;
 	return (head);
+}
+
+/**
+ * dlistint_len - function that returns the number of elements in a linked
+ * dlistint_t list
+ * @h: pointer to head doubly linked list
+ * Return: the number of nodes
+ */
+
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t size = 0;
+
+	while (h)
+	{
+		h = h->next;
+		size++;
+	}
+	return (size);
 }
