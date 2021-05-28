@@ -8,15 +8,22 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int index = 0;
+	int separator = 0;
+
+	if (!ht)
+		return;
 
 	printf("{");
 	while (index < ht->size)
 	{
 		while (ht->array[index])
 		{
+			if (separator == 1)
+				printf(", ");
 			printf("'%s': '%s'", ht->array[index]->key, ht->array[index]->value);
-			printf(", ");
 			ht->array[index] = ht->array[index]->next;
+			separator = 1;
+
 		}
 		index++;
 	}
