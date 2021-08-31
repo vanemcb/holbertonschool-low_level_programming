@@ -1,60 +1,65 @@
-0x1E. C - Search Algorithms
- By Wilfried Hennuyer, Software Engineer at Holberton School
- Ongoing project - started 08-30-2021, must end by 09-02-2021 (in 3 days) - you're done with 0% of tasks.
- Checker will be released at 08-31-2021 12:00 PM
- QA review fully automated.
-Resources
-Read or watch:
+# 0x1E. C - Search Algorithms
 
-Search algorithm
-Space complexity (1)
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+-   By Wilfried Hennuyer, Software Engineer at Holberton School
 
-General
-What is a search algorithm
-What is a linear search
-What is a binary search
-What is the best search algorithm to use depending on your needs
-Requirements
-General
-Allowed editors: vi, vim, emacs
-All your files will be compiled on Ubuntu 14.04 LTS
-Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
-All your files should end with a new line
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-You are not allowed to use global variables
-No more than 5 functions per file
-You are only allowed to use the printf function of the standard library. Any call to another function like strdup, malloc, … is forbidden.
-In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-The prototypes of all your functions should be included in your header file called search_algos.h
-Don’t forget to push your header file
-All your header files should be include guarded
-More Info
+
+## Learning Objectives
+
+### General
+
+-   What is a search algorithm
+-   What is a linear search
+-   What is a binary search
+-   What is the best search algorithm to use depending on your needs
+
+## Requirements
+
+### General
+
+-   Allowed editors:  `vi`,  `vim`,  `emacs`
+-   All your files will be compiled on Ubuntu 14.04 LTS
+-   Your programs and functions will be compiled with  `gcc 4.8.4`  using the flags  `-Wall`  `-Werror`  `-Wextra`  and  `-pedantic`
+-   All your files should end with a new line
+-   A  `README.md`  file, at the root of the folder of the project, is mandatory
+-   Your code should use the  `Betty`  style. It will be checked using  [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl "betty-style.pl")  and  [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl "betty-doc.pl")
+-   You are not allowed to use global variables
+-   No more than 5 functions per file
+-   You are only allowed to use the  `printf`  function of the standard library. Any call to another function like  `strdup`,  `malloc`, … is forbidden.
+-   In the following examples, the  `main.c`  files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own  `main.c`  files at compilation. Our  `main.c`  files might be different from the one shown in the examples
+-   The prototypes of all your functions should be included in your header file called  `search_algos.h`
+-   Don’t forget to push your header file
+-   All your header files should be include guarded
+
+## More Info
+
 You will be asked to write files containing big O notations. Please use this format:
 
-O(1)
-O(n)
-O(n!)
-n*m -> O(nm)
-n square -> O(n^2)
-sqrt n -> O(sqrt(n))
-log(n) -> O(log(n))
-n * log(n) -> O(nlog(n))
-…
-Tasks
-0. Linear search
-mandatory
-Write a function that searches for a value in an array of integers using the Linear search algorithm
+-   `O(1)`
+-   `O(n)`
+-   `O(n!)`
+-   n*m ->  `O(nm)`
+-   n square ->  `O(n^2)`
+-   sqrt n ->  `O(sqrt(n))`
+-   log(n) ->  `O(log(n))`
+-   n * log(n) ->  `O(nlog(n))`
+-   …
 
-Prototype : int linear_search(int *array, size_t size, int value);
-Where array is a pointer to the first element of the array to search in
-size is the number of elements in array
-And value is the value to search for
-Your function must return the first index where value is located
-If value is not present in array or if array is NULL, your function must return -1
-Every time you compare a value in the array to the value you are searching, you have to print this value (see example below)
+## Tasks
+
+### 0. Linear search
+
+
+Write a function that searches for a value in an array of integers using the  Linear search algorithm "Linear search algorithm"
+
+-   Prototype :  `int linear_search(int *array, size_t size, int value);`
+-   Where  `array`  is a pointer to the first element of the array to search in
+-   `size`  is the number of elements in  `array`
+-   And  `value`  is the value to search for
+-   Your function must return the first index where  `value`  is located
+-   If  `value`  is not present in  `array`  or if  `array`  is  `NULL`, your function must return  `-1`
+-   Every time you compare a value in the array to the value you are searching, you have to print this value (see example below)
+
+```
 wilfried@0x1E-search_algorithms$ cat 0-main.c 
 #include <stdio.h>
 #include <stdlib.h>
@@ -101,25 +106,27 @@ Value checked array[7] = [7]
 Value checked array[8] = [-1]
 Value checked array[9] = [9]
 Found 999 at index: -1
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 0-linear.c
- 
-1. Binary search
-mandatory
-Write a function that searches for a value in a sorted array of integers using the Binary search algorithm
+```
 
-Prototype : int binary_search(int *array, size_t size, int value);
-Where array is a pointer to the first element of the array to search in
-size is the number of elements in array
-And value is the value to search for
-Your function must return the index where value is located
-You can assume that array will be sorted in ascending order
-You can assume that value won’t appear more than once in array
-If value is not present in array or if array is NULL, your function must return -1
-You must print the array being searched every time it changes. (e.g. at the beginning and when you search a subarray) (See example)
+
+### 1. Binary search
+
+
+
+Write a function that searches for a value in a sorted array of integers using the  Binary search algorithm
+
+-   Prototype :  `int binary_search(int *array, size_t size, int value);`
+-   Where  `array`  is a pointer to the first element of the array to search in
+-   `size`  is the number of elements in  `array`
+-   And  `value`  is the value to search for
+-   Your function must return the index where  `value`  is located
+-   You can assume that  `array`  will be sorted in ascending order
+-   You can assume that  `value`  won’t appear more than once in  `array`
+-   If  `value`  is not present in  `array`  or if  `array`  is  `NULL`, your function must return  `-1`
+-   You must print the array being searched every time it changes. (e.g. at the beginning and when you search a subarray) (See example)
+
+```
 wilfried@0x1E-search_algorithms$ cat 1-main.c 
 #include <stdio.h>
 #include <stdlib.h>
@@ -159,56 +166,41 @@ Searching in array: 5, 6, 7, 8, 9
 Searching in array: 8, 9
 Searching in array: 9
 Found 999 at index: -1
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 1-binary.c
- 
-2. Big O #0
-mandatory
-What is the time complexity (worst case) of a linear search in an array of size n?
+```
 
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 2-O
- 
-3. Big O #1
-mandatory
-What is the space complexity (worst case) of an iterative linear search algorithm in an array of size n?
+### 2. Big O #0
 
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 3-O
- 
-4. Big O #2
-mandatory
-What is the time complexity (worst case) of a binary search in an array of size n?
+What is the  `time complexity`  (worst case) of a linear search in an array of size  `n`?
 
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 4-O
- 
-5. Big O #3
-mandatory
-What is the space complexity (worst case) of a binary search in an array of size n?
+### 3. Big O #1
 
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 5-O
- 
-6. Big O #4
-mandatory
+What is the  `space complexity`  (worst case) of an iterative linear search algorithm in an array of size  `n`?
+
+
+### 4. Big O #2
+
+
+What is the  `time complexity`  (worst case) of a binary search in an array of size  `n`?
+
+
+### 5. Big O #3
+
+
+
+What is the  `space complexity`  (worst case) of a binary search in an array of size  `n`?
+
+
+### 6. Big O #4
+
+
 What is the space complexity of this function / algorithm?
 
+```
 int **allocate_map(int n, int m)
 {
      int **map;
@@ -220,9 +212,6 @@ int **allocate_map(int n, int m)
      }
      return (map);
 }
-Repo:
 
-GitHub repository: holbertonschool-low_level_programming
-Directory: 0x1E-search_algorithms
-File: 6-O
- 
+```
+
